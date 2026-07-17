@@ -392,6 +392,8 @@ sequenceDiagram
 
 > Interactive Swagger UI is served at **`/docs`** and ReDoc at **`/redoc`** — see the [screenshot placement](docs/screenshots/swagger-ui.png) below for where to embed a capture of it.
 
+![Swagger UI](docs/screenshots/swagger-home.png)
+
 All error responses share a single envelope:
 
 ```json
@@ -518,7 +520,7 @@ pytest -v
 
 <div align="center">
 
-*[Screenshots](docs/screenshots/tests-passed.png))*
+![13 Tests Passing](docs/screenshots/tests-passes.png)
 
 **13 tests passing**
 
