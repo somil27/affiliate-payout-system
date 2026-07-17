@@ -520,9 +520,8 @@ pytest -v
 
 <div align="center">
 
-![13 Tests Passing](docs/screenshots/tests-passes.png)
+![13 Tests Passing](docs/screenshots/tests-passed.png)
 
-**13 tests passing**
 
 </div>
 
