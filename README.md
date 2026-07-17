@@ -390,7 +390,7 @@ sequenceDiagram
 
 ## API Documentation
 
-> Interactive Swagger UI is served at **`/docs`** and ReDoc at **`/redoc`** — see the [screenshot placement](#-screenshots-to-add-manually) below for where to embed a capture of it.
+> Interactive Swagger UI is served at **`/docs`** and ReDoc at **`/redoc`** — see the [screenshot placement](docs/screenshots/swagger-ui.png) below for where to embed a capture of it.
 
 All error responses share a single envelope:
 
@@ -514,7 +514,7 @@ pytest -v
 
 <div align="center">
 
-*(add a screenshot of your local `pytest -v` run here — see [Screenshots](#-screenshots-to-add-manually))*
+*(add a screenshot of your local `pytest -v` run here — see [Screenshots](docs/screenshots/tests-passed.png))*
 
 **13 tests passing**
 
@@ -613,7 +613,7 @@ Optional but recommended additions if you want to go further:
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License**.
 
@@ -622,7 +622,7 @@ This project is licensed under the **MIT License**.
 
 ---
 
-## 👤 Author
+## Author
 
 **Somil Shankar Gupta**
 
