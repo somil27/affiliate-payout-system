@@ -123,7 +123,7 @@ flowchart TD
     Middleware -.->|"DomainError → HTTP envelope"| Client
 ```
 
-**Layer responsibilities:**
+** Layer responsibilities:**
 
 - **Routers** — parse the request, call one service method, shape the response. No business logic.
 - **Services** — own business rules *and* the unit-of-work (`commit` / `rollback`). Money-touching operations lock the wallet row (`SELECT ... FOR UPDATE`) and write an immutable `transactions` row.
@@ -208,7 +208,7 @@ erDiagram
     }
 ```
 
-**Constraints & indexes worth calling out:**
+** Constraints & indexes worth calling out:**
 
 | Constraint | Purpose |
 | --- | --- |
@@ -225,7 +225,7 @@ Full column-level detail lives in [`docs/LLD.md`](docs/LLD.md).
 
 ---
 
-## 🔄 Business Flow
+## Business Flow
 
 <details>
 <summary><strong> 1. Sale Creation</strong> (click to expand)</summary>
@@ -417,6 +417,8 @@ All error responses share a single envelope:
 | --- | --- | --- | --- | --- | --- |
 | `/advance-payout` | `POST` | Credit 10% advance for all eligible pending sales | `AdvancePayoutRequest {user_id, idempotency_key?}` + optional `Idempotency-Key` header | `200` `AdvancePayoutResponse {total_advance_credited, sales[], wallet_balance}` | `404` not_found (user) · `409` conflict (version-conflict retries exhausted — extremely rare) |
 
+![Advance Payout API](docs/screenshots/advance-payout.png)
+
 ### Reconciliation
 
 | Endpoint | Method | Description | Request | Response | Possible Errors |
@@ -498,6 +500,8 @@ Every money-mutating service method is one atomic unit of work: lock the wallet,
 | **Retry safety** | Retrying a failed withdrawal bypasses the cooldown (the original already consumed it and the refund already landed) but still goes through the same debit + ledger logic as a fresh withdrawal |
 | **Race condition handling** | Two simultaneous `POST /advance-payout` calls for the same user never both succeed at crediting the same sale, never return `500`, and the wallet balance converges to the mathematically correct total either way |
 
+![Concurrency Tests](docs/screenshots/concurrency-tests.png)
+
 ---
 
 ## Testing
@@ -514,7 +518,7 @@ pytest -v
 
 <div align="center">
 
-*(add a screenshot of your local `pytest -v` run here — see [Screenshots](docs/screenshots/tests-passed.png))*
+*[Screenshots](docs/screenshots/tests-passed.png))*
 
 **13 tests passing**
 
