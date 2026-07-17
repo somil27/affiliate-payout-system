@@ -392,7 +392,7 @@ sequenceDiagram
 
 > Interactive Swagger UI is served at **`/docs`** and ReDoc at **`/redoc`** — see the [screenshot placement](docs/screenshots/swagger-ui.png) below for where to embed a capture of it.
 
-![Swagger UI](docs/screenshots/swagger-home.png)
+![Swagger UI](docs/screenshots/swagger-ui.png)
 
 All error responses share a single envelope:
 
