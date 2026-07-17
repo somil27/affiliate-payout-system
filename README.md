@@ -597,21 +597,6 @@ curl -sX POST localhost:8000/withdraw \
 
 ---
 
-## Screenshots to Add Manually
-
-This README references two screenshots that should be captured from your own local run and committed alongside it (e.g. under a `docs/screenshots/` folder), then linked with standard Markdown image syntax: `![alt text](docs/screenshots/filename.png)`.
-
-| # | Screenshot | Where to place it |
-| --- | --- | --- |
-| 1 | Terminal output of `pytest -v` showing all **13 tests passing** | In the **Testing** section, replacing the `(add a screenshot...)` placeholder line, directly above the "13 tests passing" caption |
-| 2 | Browser screenshot of the Swagger UI at `127.0.0.1:8000/docs` showing all endpoint groups | In the **API Documentation** section, directly under the heading and above the "All error responses share a single envelope" line |
-
-Optional but recommended additions if you want to go further:
-
-- A screenshot of `127.0.0.1:8000/docs` with the `POST /advance-payout` panel **expanded**, showing the request/response schema — place it right after the **Payouts** table.
-- A short terminal capture of the two `test_advance_payout_concurrency.py` tests running in isolation (`pytest -v tests/test_advance_payout_concurrency.py`) — place it in the **Edge Cases Covered** section, under the "Race condition handling" row, as supporting evidence.
-
----
 
 ## License
 
